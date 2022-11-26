@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <link rel="stylesheet" href="~/Content/css/Admin.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+</head>
+
+<body>
+
+  <div class="container">
+    <nav>
+      <ul class="mcd-menu">
+        <li>
+
+          <a href="/Admin/TrangchuAdmin">
+            <i class="fa fa-home"></i>
+            <strong>Trang chủ</strong>
+            <small>HYK</small>
+          </a>
+        </li>
+        <li>
+          <a href=" /TrieuChung/Index">
+            <i class="fas fa-user-nurse"></i>
+            <strong>Quản lý triệu chứng</strong>
+
+          </a>
+        </li>
+        <li>
+          <a href=" /Benh/Index">
+            <i class="fas fa-stethoscope"></i>
+            <strong>Quản lý bệnh</strong>
+
+          </a>
+        </li>
+        <li>
+          <a href="/ThongTin/Index">
+            <i class="fas fa-user-injured"></i>
+            <strong>Quản lý thông tin</strong>
+
+          </a>
+
+        </li>
+        <li>
+          <a href="/TuVan/ChuanDoan">
+            <i class="fas fa-user"></i>
+            <strong>Quản lý chuẩn đoán</strong>
+
+          </a>
+        </li>
+        <li>
+          <a href=" /LichKham/Index">
+            <i class="fas fa-user"></i>
+            <strong>Quản lý lịch khám</strong>
+
+          </a>
+        </li>
+        <li>
+          <a href="/TaiKhoan/Index">
+            <i class="fas fa-user"></i>
+            <strong>Quản lý tài khoản</strong>
+
+          </a>
+        </li>
+      </ul>
+
+      <a class="search">
+        <form>
+          @using (Html.BeginForm())
+          {
+            <p>
+              @Html.TextBox("SearchString", null, new { @class = "form-control", @placeholder = "Nhập từ khóa" }) <input type="submit" value="Tìm kiếm"/>
+            </p>
+
+          }
+        </form>
+      </a>
+      <a class="refesh">
+        <form>
+          @using (Html.BeginForm())
+          {
+            <p>
+              <input class="refesh" type="submit" value="Làm mới" />
+            </p>
+          }
+        </form>
+      </a>
+      <a href="" class="search-mobile">
+        <i class="fa fa-search"></i>
+      </a>
+
+    </nav>
+
+
+
+  </div>
+
+  @RenderBody()
+
+
+</body>
+</html>
+

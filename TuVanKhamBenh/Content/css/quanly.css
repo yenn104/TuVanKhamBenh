@@ -1,0 +1,363 @@
+﻿img {
+  position: relative;
+  right: 0;
+  /*top: -613px;*/
+  top: -671px;
+}
+
+div.row span {
+  top: -801px;
+  position: relative;
+  left: 660px;
+  font-size: 35px;
+  -webkit-text-stroke: thin;
+  color: #000
+}
+
+.create-div {
+  display: flex;
+}
+
+  .create-div a {
+    width: 200px;
+    height: 60px;
+    background-color: lightpink;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    color: #000;
+    justify-content: center;
+    border-radius: 5px;
+    text-decoration: none;
+    position: relative;
+    /*    top: -850px;
+  left: 310px;*/
+    top: -834px;
+    left: 117px;
+  }
+
+div .admin-table {
+  position: relative;
+  top: -977px;
+  left: 115px;
+}
+
+.table-div {
+  display: flex;
+  justify-content: center;
+  width: 1280px;
+}
+
+.admin-table table {
+  /*border: 1px solid #f36100;*/
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+  .admin-table table thead {
+    border: 1px solid lightpink;
+    text-align: center;
+  }
+
+    .admin-table table thead th {
+      color: #000;
+      background: lightpink;
+      padding: 15px 0;
+      font-weight: 400;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .admin-table table thead tr td {
+      border: 1px solid lightpink;
+    }
+
+.admin-table tbody td {
+  font-size: 25px;
+  color: #fff;
+  border: 1px solid lightpink;
+}
+
+.admin-table table thead tr td a {
+  color: #000;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: lightpink;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid lightpink;
+}
+
+  .admin-table tbody tr td {
+    padding: 3px 0;
+  }
+
+.admin-table table tbody tr td a {
+  color: #000;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 30px;
+  width: 30px;
+  background-color: lightpink;
+  margin: 20px;
+  text-decoration: none
+}
+
+.admin-table table tbody tr td h5 {
+  color: #000;
+}
+
+.admin-table table tbody tr td a:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+/* Admin : Thêm + sửa */
+div.form-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ /* width: 340px;*/
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: pink;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px;
+}
+
+  div.form-horizontal h1 {
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+    /*left: 30px;*/
+  }
+
+  div.form-horizontal h2 {
+    font-size: 20px;
+  }
+
+.form-group label {
+  color: #000;
+}
+
+.col-md-10 input {
+  background-color: transparent;
+  outline: none;
+  border: 2px solid #000;
+  font-size: 20px;
+}
+
+  .col-md-10 input input#Ten.form-control.text-box .single-line {
+    width: 300px;
+  }
+
+.col-md-offset-2 input {
+  background-color: lightpink;
+  color: #fff;
+  position: relative;
+  top: 10px;
+  left: 100px;
+}
+
+div .back1 a {
+  color: #fff;
+  position: relative;
+  left: 196px;
+  top: -15px;
+  text-decoration: none;
+  font-size: 20px;
+  border: 2px solid #000;
+  padding: 3px
+}
+
+div .trolai a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  left: 220px;
+  top: -15px;
+}
+
+.fa-sign-out-alt:before {
+  content: "\f2f5";
+  position: relative;
+  top: -946px;
+  font-size: xx-large;
+  left: 930px;
+  color: #000;
+}
+
+/*Chi tiết*/
+div dl.dl-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: pink;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgb(0 0 0 / 60%);
+  border-radius: 10px;
+  height: 340px;
+}
+
+  div dl.dl-horizontal a1 {
+    font-size: 20px;
+    position: relative;
+    left: 100px;
+    text-transform: uppercase;
+    -webkit-text-stroke: thin;
+  }
+
+  div dl.dl-horizontal dt a2 {
+    font-size: 18px;
+    position: relative;
+    left: 20px;
+    top: 15px;
+  }
+
+  div dl.dl-horizontal dd {
+    font-size: 18px;
+    position: relative;
+    left: 70px;
+    top: -21px;
+    color: red;
+  }
+
+  div dl.dl-horizontal p a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #000;
+    position: relative;
+    left: 250px;
+    top: 20px;
+    border: 2px solid #000;
+    padding: 5px;
+  }
+
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-dn {
+  background: lightpink;
+  /* background: radial-gradient(circle, rgb(251,33,117) 0%, rgb(251,33,117) 100%); */
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  left: 1193px;
+  top: -999px;
+  position: relative;
+  text-decoration: none;
+}
+
+  .btn-dn span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none
+  }
+
+    .btn-dn span a {
+      text-decoration: none;
+    }
+
+  .btn-dn:before,
+  .btn-dn:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 1px;
+    box-shadow: -1px -1px 20px 0px rgba(255,255,255,1), -4px -4px 5px 0px rgba(255,255,255,1), 7px 7px 20px 0px rgba(0,0,0,.4), 4px 4px 5px 0px rgba(0,0,0,.3);
+  }
+
+  .btn-dn:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn:hover {
+    background: transparent;
+    color: rgb(251,33,117);
+    box-shadow: none;
+  }
+
+    .btn-dn:hover:before {
+      transition: all 500ms ease;
+      height: 100%;
+    }
+
+    .btn-dn:hover:after {
+      transition: all 500ms ease;
+      height: 100%;
+    }
+
+  .btn-dn span:before,
+  .btn-dn span:after {
+    position: absolute;
+    content: "";
+    box-shadow: -1px -1px 20px 0px rgba(255,255,255,1), -4px -4px 5px 0px rgba(255,255,255,1), 7px 7px 20px 0px rgba(0,0,0,.4), 4px 4px 5px 0px rgba(0,0,0,.3);
+  }
+
+  .btn-dn span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: .5px;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: .5px;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn span:hover:before {
+    width: 100%;
+  }
+
+  .btn-dn span:hover:after {
+    width: 100%;
+  }

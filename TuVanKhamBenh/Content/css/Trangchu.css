@@ -1,0 +1,227 @@
+﻿div {
+  width: 1050px;
+  height: 200px;
+  padding: 290px;
+  background-repeat: repeat;
+  position: relative;
+  left: -110px;
+}
+
+body {
+  margin: 0;
+  font-family: Tahoma, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+}
+
+  .topnav a {
+    float: left;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+    .topnav a:hover {
+      background-color: rgb(251,33,117);
+      color: #fff;
+    }
+
+    .topnav a.active {
+      background-color: rgb(251,33,117);
+      color: #fff;
+    }
+
+a.fb img {
+  position: relative;
+  top: -120px;
+  left: 880px;
+}
+
+a.ins img {
+  position: relative;
+  top: -120px;
+  left: 900px;
+}
+
+a.gmail img {
+  position: relative;
+  top: -114px;
+  left: 910px
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5), 7px 7px 20px 0px rgba(0,0,0,.1), 4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-dn {
+  background: rgb(251,33,117);
+  /* background: radial-gradient(circle, rgb(251,33,117) 0%, rgb(251,33,117) 100%); */
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  left: 1400px;
+  top: -700px;
+  position: relative;
+  text-decoration: none
+}
+
+  .btn-dn span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none
+  }
+
+    .btn-dn span a {
+      text-decoration: none;
+    }
+
+  .btn-dn:before,
+  .btn-dn:after {
+    position: absolute;
+    content: "";
+    height: 0%;
+    width: 1px;
+    box-shadow: -1px -1px 20px 0px rgba(255,255,255,1), -4px -4px 5px 0px rgba(255,255,255,1), 7px 7px 20px 0px rgba(0,0,0,.4), 4px 4px 5px 0px rgba(0,0,0,.3);
+  }
+
+  .btn-dn:before {
+    right: 0;
+    top: 0;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn:after {
+    left: 0;
+    bottom: 0;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn:hover {
+    background: transparent;
+    color: rgb(251,33,117);
+    box-shadow: none;
+  }
+
+    .btn-dn:hover:before {
+      transition: all 500ms ease;
+      height: 100%;
+    }
+
+    .btn-dn:hover:after {
+      transition: all 500ms ease;
+      height: 100%;
+    }
+
+  .btn-dn span:before,
+  .btn-dn span:after {
+    position: absolute;
+    content: "";
+    box-shadow: -1px -1px 20px 0px rgba(255,255,255,1), -4px -4px 5px 0px rgba(255,255,255,1), 7px 7px 20px 0px rgba(0,0,0,.4), 4px 4px 5px 0px rgba(0,0,0,.3);
+  }
+
+  .btn-dn span:before {
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: .5px;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn span:after {
+    right: 0;
+    bottom: 0;
+    width: 0%;
+    height: .5px;
+    transition: all 500ms ease;
+  }
+
+  .btn-dn span:hover:before {
+    width: 100%;
+  }
+
+  .btn-dn span:hover:after {
+    width: 100%;
+  }
+
+/* dangki */
+.btn-dk {
+  border: none;
+  background: rgb(251,33,117);
+  background: linear-gradient(0deg, rgba(251,33,117,1) 0%, rgba(234,76,137,1) 100%);
+  color: #fff;
+  overflow: hidden;
+  left: 1263px;
+  top: -640px;
+  position: relative;
+}
+
+  .btn-dk:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .btn-dk:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+  }
+
+  .btn-dk span a {
+    text-decoration: none;
+  }
+
+  .btn-dk:hover {
+    opacity: .7;
+  }
+
+  .btn-dk:active {
+    box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3), -4px -4px 6px 0 rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255,255,255,.2), inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+  }
+
+
+@-webkit-keyframes shiny-btn1 {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<TuVanKhamBenh.Models.Benh>
+
+@{
+  ViewBag.Title = "Index";
+  Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="~/Content/css/quanly.css">
+  <title>Quản Lý Bệnh</title>
+</head>
+<body>
+  <img src="~/Hinh/meoxam.png" width="300px" height="200px">
+
+  <div class="row">
+
+    <span>DANH SÁCH BỆNH</span>
+
+  </div>
+
+  <div class="container">
+
+    <div class="create-div">
+      @Html.ActionLink("Thêm bệnh mới", "spCreate", new { @class = "fa-solid fa-pen-to-square" })
+    </div>
+    @*@Html.ActionLink("  ", "Index", new { id = "link1" }, new { @class = "fas fa-sign-out-alt" })*@
+    <button class="custom-btn btn-dn"><span>@Html.ActionLink("Đăng xuất", "LogOut", "TaiKhoan")</span></button>
+  </div>
+
+  <div class="container">
+
+    <div class="admin-table">
+      <table>
+        <thead>
+          <tr>
+            <th>@Html.DisplayNameFor(model => model.Ten)</th>
+            @*<th>@Html.DisplayNameFor(model => model.Ten)</th>*@
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var item in Model)
+          {
+            <tr>
+              <td class="class-name-info">
+                <h5> @Html.DisplayFor(modelItem => item.Ten)</h5>
+              </td>
+              <td>
+                @*<i class="fa-solid fa-pen-to-square"></i>*@
+                @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "far fa-edit" })
+              </td>
+              <td>
+                @*<i class="fa-solid fa-trash"></i>*@
+                @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { @class = "fas fa-trash-alt", onclick = "return confirm('Bạn muốn xoá đối tượng này?')" })
+              </td>
+              <td>
+                @Html.ActionLink(" ", "Details", new { id = item.ID }, new { @class = "fas fa-eye" })
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
+
+

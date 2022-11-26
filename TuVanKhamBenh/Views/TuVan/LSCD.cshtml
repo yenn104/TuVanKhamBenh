@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TuVanKhamBenh.Models.ChuanDoan>
+
+@{
+  ViewBag.Title = "LSCD";
+  Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<p style="font-size:15px; font-family:Tahoma; margin-left:250px">Trang chủ > Lịch sử chuẩn đoán</p>
+
+
+<div class="List">
+  @if (Model.Count() > 0)
+  {
+    <table class="user-table">
+      <tr>
+        <th>
+          @Html.DisplayNameFor(model => model.IDBenh)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.Ngay)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.ChiPhi)
+        </th>
+      </tr>
+
+      @foreach (var item in Model)
+      {
+        <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.IDBenh)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.Ngay)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+          </td>
+          <td>
+            @Html.DisplayFor(modelItem => item.ChiPhi)
+          </td>
+          @*<td>
+              @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+              @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+              @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>*@
+        </tr>
+      }
+
+    </table>
+
+  }
+    else
+    {
+        <p style="font-size: 18px;font-family:Tahoma; padding: 50px;">Danh sách trống!</p>
+    }
+
+</div>
+

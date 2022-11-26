@@ -1,0 +1,102 @@
+﻿@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <title>Liên Hệ</title>
+  <link rel="stylesheet" type="text/css" href="~/Content/css/Contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+  <section id="contact">
+
+    <h1 class="section-header">LIÊN HỆ</h1>
+
+
+    <div class="direct-contact-container">
+
+      <ul class="contact-list">
+        <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Ho Chi Minh City, State</span></i></li>
+
+        <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="#" title="Give me a call">(212) 8888-9999</a></span></i></li>
+
+        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:Thao10huyen03@gmail.com" title="Send me an email">Thao10huyen03@gmail.com</a></span></i></li>
+        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:lbyyy2001@gmail.com" title="Send me an email">lbyyy2001@gmail.com</a></span></i></li>
+        <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:tuankietpuppy@gmail.com" title="Send me an email">tuankietpuppy@gmail.com</a></span></i></li>
+      </ul>
+
+      <hr>
+      <ul class="social-media-list">
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="contact-icon">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+        </li>
+      </ul>
+      <hr>
+
+      @*@{
+      var acc = Session["Taikhoan"] as TuVanKhamBenh.Models.UserAccount;
+    }
+    @if (acc != null)
+    {
+      <a href="#" target="_blank" class="contact-icon">
+        <i class="fas fa-long-arrow-alt-left"> Trở về </i>
+      </a>
+    }
+    else
+    {
+      <a href="#" target="_blank" class="contact-icon">
+        <i class="fas fa-long-arrow-alt-left"> Trở về </i>
+      </a>
+    }*@
+
+        @{
+          var acc = Session["Taikhoan"] as TuVanKhamBenh.Models.UserAccount;
+          Boolean admin = false;
+          if (acc != null)
+          {
+            admin = (Boolean)@acc.Admin;
+          }
+        }
+        @if (admin == true)
+        {
+          <a href="/Admin/TrangchuAdmin" class="contact-icon">
+            <i class="fas fa-long-arrow-alt-left"> Trở về </i>
+          </a>
+        }
+        else
+        {
+          <a href="/Home/Index"  class="contact-icon">
+            <i class="fas fa-long-arrow-alt-left"> Trở về </i>
+          </a>
+        }
+
+
+    </div>
+
+  </section>
+
+</body>
+</html>

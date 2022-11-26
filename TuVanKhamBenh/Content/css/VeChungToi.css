@@ -1,0 +1,375 @@
+﻿<style >
+input[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 4px;
+  outline: none;
+  padding: 12px 14px;
+  transition: 0.6s ease-in-out;
+  position: relative;
+  right: -1000px;
+}
+
+.grid-img {
+  column-count: 3; /* Số cột */
+  /* column-gap: 10px;Khoảng cách giữa các cột */
+}
+
+  .grid-img img {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 15px;
+    break-inside: avoid;
+  }
+
+img.hatmeo {
+  position: relative;
+  top: 600px;
+  right: 800px;
+}
+
+.topnav {
+  overflow: hidden;
+}
+
+  .topnav a {
+    float: left;
+    color: #000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+    .topnav a:hover {
+      background-color: rgb(251,33,117);
+      color: #fff;
+    }
+
+</style >
+
+.topnav a.active {
+  background-color: rgb(251,33,117);
+  color: #fff;
+}
+
+.breadcam_bg {
+  background-image: url('~/Hinh/bradcam.png');
+}
+
+.breadcam_bg_1 {
+  background-image: url('~/Hinh/bradcam2.png');
+}
+
+.breadcam_bg_2 {
+  background-image: url('~/Hinh/bradcam3.png');
+}
+
+
+.bradcam_area {
+  background-size: cover;
+  background-position: center center;
+  padding: 160px 0;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .bradcam_area {
+    padding: 150px 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .bradcam_area {
+    padding: 150px 0;
+  }
+}
+
+.bradcam_area h3 {
+  font-size: 50px;
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: 0;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+  .bradcam_area h3 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .bradcam_area h3 {
+    font-size: 40px;
+  }
+}
+
+.pet_care_area {
+  padding-top: 73px;
+  padding-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+  .pet_care_area {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+}
+
+.pet_care_area .pet_thumb img {
+  width: 100%;
+}
+
+.pet_care_area .pet_info .section_title p {
+  color: #66666f;
+  line-height: 28px;
+  font-size: 16px;
+  margin-bottom: 54px;
+  margin-top: 30px;
+}
+
+.boxed-btn3 {
+  background-image: -moz-linear-gradient(0deg, #f14437 0%, #ed5b0d 99%);
+  background-image: -webkit-linear-gradient(0deg, #f14437 0%, #ed5b0d 99%);
+  background-image: -ms-linear-gradient(0deg, #f14437 0%, #ed5b0d 99%);
+}
+
+.boxed-btn3 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  padding: 17px 55px;
+  font-family: "Poppins", sans-serif;
+  display: inline-block;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  background-position: 100% 0;
+  background-position: 0 0;
+}
+
+  .boxed-btn3:hover {
+    background-size: 200% 200%;
+    color: #fff;
+  }
+
+  .boxed-btn3:focus {
+    outline: none;
+  }
+
+.sample-text-area {
+  background: #fff;
+}
+
+.text-heading {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.team_area {
+
+  padding-top: 125px;
+}
+
+@media (max-width: 767px) {
+  .team_area {
+    padding-bottom: 60px;
+    padding-top: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .team_area {
+    padding-bottom: 100px;
+    padding-top: 50px;
+  }
+}
+
+.team_area .single_team {
+  margin-bottom: 30px;
+}
+
+  .team_area .single_team .thumb img {
+    width: 100%;
+  }
+
+  .team_area .single_team .member_name {
+    position: relative;
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+  }
+
+    .team_area .single_team .member_name .mamber_inner {
+      border-radius: 5px;
+      display: inline-block;
+      padding: 16px 40px 11px 40px;
+      background-color: white;
+      box-shadow: 0px 16px 35px 0px rgba(0, 0, 2, 0.08);
+    }
+
+      .team_area .single_team .member_name .mamber_inner h4 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        color: #222222;
+        margin-bottom: 0;
+      }
+
+      .team_area .single_team .member_name .mamber_inner p {
+        font-size: 14px;
+        color: #7a7b7c;
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+
+  .team_area .single_team:hover .member_name {
+    -webkit-transform: translateY(-25px);
+    -moz-transform: translateY(-25px);
+    -ms-transform: translateY(-25px);
+    transform: translateY(-25px);
+  }
+
+.section_title h3 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 60px;
+  color: #191d34;
+  font-family: "Poppins", sans-serif;
+}
+
+  .section_title h3 span {
+    font-weight: 300;
+  }
+
+@media (max-width: 767px) {
+  .section_title h3 {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .section_title h3 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .section_title h3 {
+    font-size: 33px;
+    line-height: 40px;
+  }
+}
+
+.section_title p {
+  font-size: 16px;
+  line-height: 30px;
+  color: #909092;
+  font-weight: 400;
+}
+
+.mb-95 {
+  margin-bottom: 90px;
+}
+
+@media (max-width: 767px) {
+  .mb-95 {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .mb-95 {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .mb-95 {
+    margin-bottom: 50px;
+  }
+}
+
+.contact_anipat {
+  background-position: center center;
+  background-size: cover;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 767px) {
+  .contact_anipat {
+    background-size: cover;
+    padding: 110px 0;
+  }
+}
+
+.contact_anipat .contact_text .section_title h3 {
+  color: #fff;
+}
+
+.contact_anipat .contact_text .section_title p {
+  font-size: 25px;
+  color: #fff;
+  line-height: 40px;
+  margin-top: 35px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .contact_anipat .contact_text .contact_btn {
+    display: block !important;
+  }
+}
+
+.contact_anipat .contact_text .contact_btn p {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin-left: 20px;
+}
+
+@media (max-width: 767px) {
+  .contact_anipat .contact_text .contact_btn p {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+.contact_anipat .contact_text .contact_btn p a {
+  font-weight: 600;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.anipat_bg_1 {
+  background-image: url('~/Hinh/contact_bg.png');
+}
+
+.boxed-btn4 {
+  background: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  color: #ff3500;
+  padding: 17px 50px;
+  font-family: Tahoma, sans-serif;
+  display: inline-block;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+}

@@ -1,0 +1,53 @@
+﻿@model TuVanKhamBenh.Models.ThongTin
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link rel="stylesheet" href="~/Content/css/quanly.css">
+</head>
+<body>
+    <div>
+       
+       
+        <dl class="dl-horizontal">
+            <h4>Chi tiết thông tin mèo </h4>
+            <dt>
+                @Html.DisplayNameFor(model => model.Tuoi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Tuoi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CanNang)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CanNang)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Giong)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Giong)
+            </dd>
+            <p>
+
+                @Html.ActionLink("Trở lại", "Index")
+            </p>
+        </dl>
+      
+    </div>
+   
+</body>
+</html>

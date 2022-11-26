@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.625" name="HYK">
+  <DataContextMoniker Name="/HYKDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c4e90fcc-8b05-45fc-92fb-a8dc1a764d89" absoluteBounds="0.75, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HYKDataContext/Benh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="360dde12-eab1-4284-8890-54dd95ca064e" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="548a3e46-79cb-4658-b7c5-03544a68d9cb" absoluteBounds="0.75, 9.625, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/HYKDataContext/UserAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54ad46cf-7191-47b6-ab63-900915ab5198" absoluteBounds="0.765, 10.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb3e95ac-3738-4e47-94eb-5159aa73960e" absoluteBounds="3.5, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HYKDataContext/ChiPhiBenh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b705c689-35f6-42b4-bdc9-294eb1ee6183" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8eca7c12-a1db-47d7-bbcb-94c8616aabc6" absoluteBounds="3.5, 6.625, 2, 1.7708968098958318">
+      <DataClassMoniker Name="/HYKDataContext/ChuanDoan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e770bdf-69cd-4115-a167-9732ad62bdf8" absoluteBounds="3.515, 7.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b6ba52b6-3fae-4bc9-9205-7b521add3ce4" absoluteBounds="6.5, 5.125, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/HYKDataContext/LichKham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d224d76f-330a-4f81-95a4-53d693d7869a" absoluteBounds="6.515, 5.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ebc5513e-d3cd-435d-84e3-8ca74602c564" absoluteBounds="0.75, 0.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/HYKDataContext/ThongTin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b296cdda-b54d-4345-a20d-84744603c8a4" absoluteBounds="0.765, 1.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ceb018a-3996-4e73-ad77-9d415bb079ca" absoluteBounds="0.75, 7, 2, 1.1939925130208318">
+      <DataClassMoniker Name="/HYKDataContext/TrieuChung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="608e9f1f-34c9-4b6e-8f2b-ee47cc635dba" absoluteBounds="0.765, 7.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cd28fce4-2549-44b2-bfcd-c3251c9d5964" absoluteBounds="3.5, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/HYKDataContext/TrieuChungBenh" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d370dd8b-3161-4da8-82a2-731ec311f0e9" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.875); (3.125 : 3.5); (3.125 : 1.53929768880208); (3.5 : 1.53929768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/Benh/Benh_ChiPhiBenh" />
+      <nodes>
+        <classShapeMoniker Id="c4e90fcc-8b05-45fc-92fb-a8dc1a764d89" />
+        <classShapeMoniker Id="cb3e95ac-3738-4e47-94eb-5159aa73960e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.2612939453125); (3.125 : 5.6362939453125); (3.125 : 7.51044840494792); (3.5 : 7.51044840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/Benh/Benh_ChuanDoan" />
+      <nodes>
+        <classShapeMoniker Id="c4e90fcc-8b05-45fc-92fb-a8dc1a764d89" />
+        <classShapeMoniker Id="8eca7c12-a1db-47d7-bbcb-94c8616aabc6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.5104484049479); (4.5 : 10.5104484049479); (4.5 : 8.39589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/UserAccount/UserAccount_ChuanDoan" />
+      <nodes>
+        <classShapeMoniker Id="548a3e46-79cb-4658-b7c5-03544a68d9cb" />
+        <classShapeMoniker Id="8eca7c12-a1db-47d7-bbcb-94c8616aabc6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.036471702474); (4.41666666666667 : 10.036471702474 : JumpStart); (4.58333333333333 : 10.036471702474 : JumpEnd); (7.5 : 10.036471702474); (7.5 : 7.0881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/UserAccount/UserAccount_LichKham" />
+      <nodes>
+        <classShapeMoniker Id="548a3e46-79cb-4658-b7c5-03544a68d9cb" />
+        <classShapeMoniker Id="b6ba52b6-3fae-4bc9-9205-7b521add3ce4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.99644653320312); (3.04166666666667 : 1.99644653320312 : JumpStart); (3.20833333333333 : 1.99644653320312 : JumpEnd); (3.5 : 1.99644653320312)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/ThongTin/ThongTin_ChiPhiBenh" />
+      <nodes>
+        <classShapeMoniker Id="ebc5513e-d3cd-435d-84e3-8ca74602c564" />
+        <classShapeMoniker Id="cb3e95ac-3738-4e47-94eb-5159aa73960e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.42234537760417); (3.04166666666667 : 2.42234537760417 : JumpStart); (3.20833333333333 : 2.42234537760417 : JumpEnd); (7.5 : 2.42234537760417); (7.5 : 5.125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/ThongTin/ThongTin_LichKham" />
+      <nodes>
+        <classShapeMoniker Id="ebc5513e-d3cd-435d-84e3-8ca74602c564" />
+        <classShapeMoniker Id="b6ba52b6-3fae-4bc9-9205-7b521add3ce4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.56814697265625); (3.5 : 4.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/Benh/Benh_TrieuChungBenh" />
+      <nodes>
+        <classShapeMoniker Id="c4e90fcc-8b05-45fc-92fb-a8dc1a764d89" />
+        <classShapeMoniker Id="cd28fce4-2549-44b2-bfcd-c3251c9d5964" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.03122649649439); (3.06607443490112 : 6.71515206159327 : JumpStart); (3.18392556509888 : 6.59730093139551 : JumpEnd); (3.28125 : 6.49997649649439); (3.28125 : 4.94597245898438); (3.5 : 4.94597245898438)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/HYKDataContext/TrieuChung/TrieuChung_TrieuChungBenh" />
+      <nodes>
+        <classShapeMoniker Id="1ceb018a-3996-4e73-ad77-9d415bb079ca" />
+        <classShapeMoniker Id="cd28fce4-2549-44b2-bfcd-c3251c9d5964" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

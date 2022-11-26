@@ -1,0 +1,36 @@
+﻿@model TuVanKhamBenh.Models.TrieuChung
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="~/Content/css/quanly.css">
+    <title>Edit</title>
+</head>
+
+<body>
+    <div>
+        <dl class="dl-horizontal">
+            <a1>Chi tiết triệu chứng</a1>
+            <dt>
+                @Html.DisplayNameFor(model => model.Ten)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ten)
+            </dd>          
+            <p>
+                @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+                @Html.ActionLink("Trở lại", "Index")
+            </p>
+        </dl>
+    </div>
+
+
+</body>
+</html>

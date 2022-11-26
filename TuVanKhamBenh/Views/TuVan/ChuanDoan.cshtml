@@ -1,0 +1,47 @@
+﻿@model TuVanKhamBenh.Models.SP_ChuanDoanResult
+
+@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="~/Content/css/quanly.css">
+  <title>Kết Quả Chuẩn Đoán</title>
+
+</head>
+<body>
+  <div>
+    <hr />
+    <dl class="dl-horizontal">
+      <h1 style="text-align: center"> Kết quả chuẩn đoán </h1>
+      <dt>
+        @Html.DisplayNameFor(model => model.Ten)
+      </dt>
+
+      <dd>
+        @Html.DisplayFor(model => model.Ten)
+      </dd>
+
+      <dt>
+        @Html.DisplayNameFor(model => model.ChiPhi)
+      </dt>
+
+      <dd>
+        @Html.DisplayFor(model => model.ChiPhi)
+      </dd>
+      
+      <p>
+        @Html.ActionLink("Trở về", "Index", "Home")
+      </p>
+
+
+    </dl>
+  </div>
+
+</body>
+</html>

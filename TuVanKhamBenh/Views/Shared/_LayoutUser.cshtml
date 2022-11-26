@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HYK</title>
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="~/Content/css/UserLayout.css">
+</head>
+<body background="~/hinh/Meo pink.png">
+  @{
+    var acc = Session["Taikhoan"] as TuVanKhamBenh.Models.UserAccount;
+    Boolean admin = false;
+    string quyen = null;
+    string ten = null;
+    if (acc != null)
+    {
+      admin = (Boolean)@acc.Admin;
+      ten = @acc.Ten;
+    }
+    if (admin == true)
+    {
+      quyen = "Admin";
+    }
+    else
+    {
+      quyen = "User";
+    }
+  }
+  <div class="topnav">
+
+    @Html.ActionLink("Trang chủ", "Index", "Home")
+    @Html.ActionLink("Tư Vấn", "TuVan", "TuVan")
+
+    @if (quyen == "Admin")
+    {
+      @Html.ActionLink("Quản lý", "Index", "Admin")
+    }
+
+
+    @Html.ActionLink("Đặt lịch", "Create", "LichKham")
+    @Html.ActionLink("Thông tin dinh dưỡng", "ThongTinDD", "Home")
+    @Html.ActionLink("Liên hệ", "Contact", "Home")
+    @Html.ActionLink("Về chúng tôi", "About", "Home")
+    @if (acc != null)
+    {
+      @Html.ActionLink("Lịch sử chuẩn đoán", "LSCD", "TuVan")
+      @Html.ActionLink("Lịch sử đặt lịch", "LSDL", "TuVan")
+    }
+  </div>
+
+
+  @if (acc == null)
+  {
+    @*@Html.ActionLink("Đăng nhập", "Index", "Login")*@
+    <button class="custom-btn btn-dn"><span>@Html.ActionLink("Đăng nhập", "DangNhap", "Taikhoan")</span></button>
+    <button class="custom-btn btn-dk"><span>@Html.ActionLink("Đăng ký", "Dangky")</span></button>
+  }
+  @if (acc != null && quyen == "Admin")
+  {
+    <button class="custom-btn btn-dn"><span>@Html.ActionLink("Đăng xuất", "LogOut", "TaiKhoan")</span></button>
+    <button class="custom-btn btn-dk"><span>@Html.ActionLink("Đổi mật khẩu", "ChangePassword", "TaiKhoan")</span></button>
+  }
+  @if (acc != null && quyen == "User")
+  {
+    <button class="custom-btn btn-dn"><span>@Html.ActionLink("Đăng xuất", "LogOut", "TaiKhoan")</span></button>
+    <button class="custom-btn btn-dk"><span>@Html.ActionLink("Đổi mật khẩu", "ChangePassword", "TaiKhoan")</span></button>
+  }
+  <hr />
+
+  @RenderBody()
+  <hr />
+  <a class="fb " href="https://www.facebook.com/ptth1003" target="_blank"><img src="~/Hinh/logofb.png" alt="facebook" width="35px" height="35px" /></a>
+  <a class="ins " href="https://www.instagram.com/podo_oooo/" target="_blank"><img src="~/Hinh/logoins.png" alt="instagram" width="35px" height="35px" /></a>
+  <a class="gmail " href="https://myaccount.google.com/?hl=vi&utm_source=OGB&utm_medium=act&pli=1" target="_blank"><img src="~/Hinh/logogmail.png" alt="gmail" width="52px" height="52px" /></a>
+
+  <hr />
+  <fodder>
+  </fodder>
+</body>
+</html>
+

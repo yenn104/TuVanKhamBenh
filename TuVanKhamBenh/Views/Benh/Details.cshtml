@@ -1,0 +1,50 @@
+﻿@model TuVanKhamBenh.Models.Benh
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="shortcut icon " href="~/Hinh/logo.ico">  
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="~/Content/css/quanly.css">
+    <title>Chi Tiết Bệnh</title>
+</head>
+
+<body>
+    <div>
+
+
+
+      <dl class="dl-horizontal">
+        <a1>Chi tiết bệnh</a1>
+        <dt>
+          @Html.DisplayNameFor(model => model.Ten)
+        </dt>
+        <dd>
+          @Html.DisplayFor(model => model.Ten)
+        </dd>
+        <dt>
+          Triệu chứng
+        </dt>
+        <dd>
+          @foreach (var tcb in ViewBag.ListTCB)
+          {
+              <label>@tcb.Ten</label><br />
+          }
+        </dd>
+        <p>
+          @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+          @Html.ActionLink("Trở lại", "Index")
+        </p>
+      </dl>
+        
+    </div>
+    
+        
+</body>
+</html>

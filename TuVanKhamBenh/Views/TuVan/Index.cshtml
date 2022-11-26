@@ -1,0 +1,90 @@
+﻿@model IEnumerable<TuVanKhamBenh.Models.SP_DSChuanDoanResult>
+
+@{
+  ViewBag.Title = "Index";
+  Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="~/Content/css/quanly.css" />
+  <title>Chuẩn Đoán</title>
+</head>
+<body>
+  <img src="~/Hinh/meoxam.png" width="300px" height="200px">
+
+  <div class="row">
+
+    <span> DANH SÁCH CHUẨN ĐOÁN </span>
+
+  </div>
+
+  <div class="container">
+
+    <div class="create-div">
+      @Html.ActionLink("Thêm chuẩn đoán mới", "TuVan", new { @class = "fa-solid fa-pen-to-square" })
+    </div>
+    @*@Html.ActionLink("  ", "Index", new { id = "link1" }, new { @class = "fas fa-sign-out-alt" })*@
+    <button class="custom-btn btn-dn"><span>@Html.ActionLink("Đăng xuất", "LogOut", "TaiKhoan")</span></button>
+  </div>
+
+  <div class="container">
+
+    <div class="admin-table">
+      <table>
+        <thead>
+          <tr>
+            <th>
+              @Html.DisplayNameFor(model => model.Ten)
+            </th>
+            <th>
+              @Html.DisplayNameFor(model => model.ChiPhi)
+            </th>
+            <th>
+              @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+              @Html.DisplayNameFor(model => model.Ngay)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+
+
+          @foreach (var item in Model)
+          {
+            <tr>
+              <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.ChiPhi)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Ngay)
+              </td>
+
+              <td>
+                @*<i class="fa-solid fa-trash"></i>*@
+                @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { @class = "fas fa-trash-alt", onclick = "return confirm('Bạn muốn xoá đối tượng này?')" })
+              </td>
+
+            </tr>
+          }
+
+      </table>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+

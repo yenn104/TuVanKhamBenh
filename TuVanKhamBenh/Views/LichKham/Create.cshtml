@@ -1,0 +1,180 @@
+﻿@model TuVanKhamBenh.Models.LichKham
+
+
+
+@{
+  Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="~/Content/css/quanly.css">
+  <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+  <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+  <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+  <title>Đặt Lịch Khám</title>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.datepicker').datepicker({
+        dateFormat: 'dd/mm/yy',
+        changeMonth: true,
+        changeYear: true,
+        minDate: new Date(),
+        yearRange: '-0:+2'
+      });
+      var date = new Date();
+      date.setDate(date.getDate());
+    });
+  </script>
+</head>
+
+
+<body>
+
+  @using (Html.BeginForm(FormMethod.Post))
+  {
+    @Html.AntiForgeryToken()
+
+  <div class="form-horizontal">
+    <h1>Đặt lịch khám</h1>
+
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*@Html.HiddenFor(model => model.ID)
+    ////*@
+    <div class="form-group">
+      @*@Html.LabelFor(model => model.Info, htmlAttributes: new { @class = "control-label col-md-2" })*@
+      <label>Chọn thông tin</label>
+      <div class="col-md-10">
+        @*<label>Tuổi: </label>*@
+        <select name="Tuoi">
+          <option>Chọn tuổi</option>
+          @foreach (var i in ViewBag.tuoi)
+          {
+            <option value="@i.Tuoi">@i.Tuoi</option>
+          }
+        </select>
+
+        <select name="CanNang">
+          <option>Chọn cân nặng</option>
+          @foreach (var i in ViewBag.cannang)
+          {
+            <option value="@i.CanNang">@i.CanNang</option>
+          }
+        </select>
+
+        <select name="Giong">
+          <option>Chọn giống</option>
+          @foreach (var i in ViewBag.giong)
+          {
+            <option value="@i.Giong">@i.Giong</option>
+          }
+        </select>
+
+        @*@Html.DropDownListFor(model => model.Info, new SelectList(ViewBag.cannang, "CanNang", "CanNang"), "Chọn cân nặng")
+        @Html.DropDownListFor(model => model.Info, new SelectList(ViewBag.giong, "Giong", "Giong"), "Chọn giống")*@
+        @Html.ValidationMessageFor(model => model.Info, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    @{
+      var acc = Session["Taikhoan"] as TuVanKhamBenh.Models.UserAccount;
+    }
+    @if (acc != null)
+    {
+      <div class="form-group">
+        @*@Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+          @Html.HiddenFor(model => model.Username, new { @Value = acc.Username })
+          @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+      </div>
+
+      <div class="form-group">
+        @Html.LabelFor(model => model.Ten, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+          @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control", @Value = acc.Ten } })
+          @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+        </div>
+      </div>
+    }
+    else
+    {
+      @*<div class="form-group">
+        @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+          @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+      </div>*@
+      <div class="form-group">
+        @*@Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })*@
+        <div class="col-md-10">
+          @Html.HiddenFor(model => model.Username)
+          @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+        </div>
+      </div>
+
+      <div class="form-group">
+        @Html.LabelFor(model => model.Ten, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+          @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-control" } })
+          @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+        </div>
+      </div>
+    }
+    <div class="form-group">
+      @Html.LabelFor(model => model.NgayHen, htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.EditorFor(model => model.NgayHen,
+            new
+            {
+              htmlAttributes = new
+              {
+                @readonly = "true",
+                Value = DateTime.Now.ToString("dd/MM/yyyy"),
+                @class = "form-control datepicker",
+                @id = "txtNgayHen"
+              }
+            })
+        @Html.ValidationMessageFor(model => model.NgayHen, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-offset-2 col-md-10">
+        <input type="submit" value="Thêm" class="btn btn-default" />
+      </div>
+    </div>
+
+    <div class="back1">
+      @{
+        Boolean admin = false;
+        if (acc != null)
+        {
+          admin = (Boolean)@acc.Admin;
+        }
+      }
+      @if (admin == true)
+      {
+        @Html.ActionLink(" Trở lại ", "TrangchuAdmin", "Admin")
+      }
+      else
+      {
+        @Html.ActionLink(" Trở lại ", "Index", "Home")
+      }
+    </div>
+
+  </div>
+  }
+
+
+</body>
+
+</html>
+

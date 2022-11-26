@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HYK" Class="HYKDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=msi;Initial Catalog=HYK;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="HYKConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Benh" Member="Benhs">
+    <Type Name="Benh">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Slg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Benh_ChiPhiBenh" Member="ChiPhiBenhs" ThisKey="ID" OtherKey="IDBenh" Type="ChiPhiBenh" />
+      <Association Name="Benh_ChuanDoan" Member="ChuanDoans" ThisKey="ID" OtherKey="IDBenh" Type="ChuanDoan" />
+      <Association Name="Benh_TrieuChungBenh" Member="TrieuChungBenhs" ThisKey="ID" OtherKey="IDBenh" Type="TrieuChungBenh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserAccount" Member="UserAccounts">
+    <Type Name="UserAccount">
+      <Column Name="Username" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Gmail" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="UserAccount_ChuanDoan" Member="ChuanDoans" ThisKey="Username" OtherKey="UserName" Type="ChuanDoan" />
+      <Association Name="UserAccount_LichKham" Member="LichKhams" ThisKey="Username" OtherKey="Username" Type="LichKham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChiPhiBenh" Member="ChiPhiBenhs">
+    <Type Name="ChiPhiBenh">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDBenh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Info" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChiPhi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Benh_ChiPhiBenh" Member="Benh" ThisKey="IDBenh" OtherKey="ID" Type="Benh" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ThongTin_ChiPhiBenh" Member="ThongTin" ThisKey="Info" OtherKey="ID" Type="ThongTin" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ChuanDoan" Member="ChuanDoans">
+    <Type Name="ChuanDoan">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDBenh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ChiPhi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Benh_ChuanDoan" Member="Benh" ThisKey="IDBenh" OtherKey="ID" Type="Benh" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="UserAccount_ChuanDoan" Member="UserAccount" ThisKey="UserName" OtherKey="Username" Type="UserAccount" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LichKham" Member="LichKhams">
+    <Type Name="LichKham">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Info" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NgayDat" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NgayHen" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="UserAccount_LichKham" Member="UserAccount" ThisKey="Username" OtherKey="Username" Type="UserAccount" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="ThongTin_LichKham" Member="ThongTin" ThisKey="Info" OtherKey="ID" Type="ThongTin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ThongTin" Member="ThongTins">
+    <Type Name="ThongTin">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tuoi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CanNang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Giong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ThongTin_ChiPhiBenh" Member="ChiPhiBenhs" ThisKey="ID" OtherKey="Info" Type="ChiPhiBenh" />
+      <Association Name="ThongTin_LichKham" Member="LichKhams" ThisKey="ID" OtherKey="Info" Type="LichKham" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TrieuChung" Member="TrieuChungs">
+    <Type Name="TrieuChung">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TrieuChung_TrieuChungBenh" Member="TrieuChungBenhs" ThisKey="ID" OtherKey="IDTrieuChung" Type="TrieuChungBenh" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TrieuChungBenh" Member="TrieuChungBenhs">
+    <Type Name="TrieuChungBenh">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDBenh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDTrieuChung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Benh_TrieuChungBenh" Member="Benh" ThisKey="IDBenh" OtherKey="ID" Type="Benh" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="TrieuChung_TrieuChungBenh" Member="TrieuChung" ThisKey="IDTrieuChung" OtherKey="ID" Type="TrieuChung" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.SP_AccountCreate" Method="SP_AccountCreate">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(20)" />
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="gmail" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_XSINFO" Method="SP_XSINFO">
+    <Parameter Name="tuoi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="cannang" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="giong" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SP_XSINFOResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_BenhCreate" Method="SP_BenhCreate">
+    <Parameter Name="Ten" Parameter="ten" Type="System.String" DbType="NVarChar(100)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ChuanDoan" Method="SP_ChuanDoan">
+    <Parameter Name="key" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="info" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_ChuanDoanResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ChiPhi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_DSChuanDoan" Method="SP_DSChuanDoan">
+    <ElementType Name="SP_DSChuanDoanResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ChiPhi" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Login" Method="SP_Login">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="SP_LoginResult">
+      <Column Name="Username" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Admin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_TCBenh" Method="SP_TCBenh">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SP_TCBenhResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ThemCD" Method="SP_ThemCD">
+    <Parameter Name="idbenh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chiphi" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="username" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_ThemCD1" Method="SP_ThemCD1">
+    <Parameter Name="idbenh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="chiphi" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

@@ -1,0 +1,69 @@
+﻿@model TuVanKhamBenh.Models.UserAccount
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="shortcut icon " href="~/Hinh/logo.ico">
+    <meta name="viewport" content="width=device-width" />
+    <title>Chi Tiết Tài Khoản</title>
+    <link rel="stylesheet" href="~/Content/css/quanly.css">
+</head>
+<body>
+    <div>
+
+
+        <dl class="dl-horizontal">
+            <h3 style="text-align:center">Thông tin tài khoản </h3>
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ten)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ten)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Gmail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Gmail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Admin)
+            </dt>
+
+            <dd>
+              @if (Model.Admin == true)
+              {
+                <p>Admin</p>
+              }
+              else
+              {
+                <p>Khách hàng</p>
+              }
+            </dd>
+        <p>
+
+            @Html.ActionLink("Trở lại", "Index")
+        </p>
+        </dl>
+
+    </div>
+
+</body>
+</html>

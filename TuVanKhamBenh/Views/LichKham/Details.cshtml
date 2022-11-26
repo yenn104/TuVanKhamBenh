@@ -1,0 +1,94 @@
+﻿@model TuVanKhamBenh.Models.LichKham
+
+@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="~/Content/css/quanly.css">
+  <title>Chi Tiết Lịch Khám</title>
+</head>
+
+<body>
+  <div>
+
+    <dl class="dl-horizontal">
+      <a1>Chi tiết lịch khám</a1>
+      <br />
+      <br />
+      @{
+        var acc = Session["Taikhoan"] as TuVanKhamBenh.Models.UserAccount;
+        Boolean admin = false;
+        if (acc != null)
+        {
+          admin = (Boolean)@acc.Admin;
+        }
+      }
+      <dt>
+        @Html.DisplayNameFor(model => model.Info)
+      </dt>
+
+      <dd>
+        @Html.DisplayFor(model => model.Info)
+      </dd>
+      @if (Model.Username != null)
+      {
+        <dt>
+          @Html.DisplayNameFor(model => model.Username)
+        </dt>
+
+        <dd>
+          @Html.DisplayFor(model => model.Username)
+        </dd>
+      }
+
+
+      <dt>
+        @Html.DisplayNameFor(model => model.Ten)
+      </dt>
+
+      <dd>
+        @Html.DisplayFor(model => model.Ten)
+      </dd>
+
+      <dt>
+        @Html.DisplayNameFor(model => model.NgayDat)
+      </dt>
+
+      <dd>
+        @Html.DisplayFor(model => model.NgayDat)
+      </dd>
+
+      <dt>
+        @Html.DisplayNameFor(model => model.NgayHen)
+      </dt>
+
+      <dd>
+        @Html.DisplayFor(model => model.NgayHen)
+      </dd>
+
+
+      @*@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |*@
+
+      @if (admin == true)
+      {
+        @Html.ActionLink("Trở lại", "Index")
+      }
+      else
+      {
+        @Html.ActionLink("Trở lại", "Index", "Home")
+      }
+
+    </dl>
+
+  </div>
+
+
+</body>
+</html>

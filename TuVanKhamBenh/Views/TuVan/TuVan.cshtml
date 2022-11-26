@@ -1,0 +1,83 @@
+﻿@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+  <link rel="shortcut icon " href="~/Hinh/logo.ico">
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="~/Content/css/TuVan.css">
+  <title>Tư Vấn</title>
+
+</head>
+<body>
+  <form method="post" action=" /TuVan/ChuanDoan">
+    <h1 class="tieude"> CHUẨN ĐOÁN </h1>
+    <table class="table">
+      <tr>
+        <th>
+          <label>Tuổi: </label>
+          <select name="Tuoi">
+            <option>Chọn tuổi</option>
+            @foreach (var i in ViewBag.tuoi)
+            {
+              <option value="@i.Tuoi">@i.Tuoi</option>
+            }
+          </select>
+        </th>
+        <th>
+          <label>Cân nặng: </label>
+          <select name="CanNang">
+            <option>Chọn cân nặng</option>
+            @foreach (var i in ViewBag.cannang)
+            {
+              <option value="@i.CanNang">@i.CanNang</option>
+            }
+          </select>
+        </th>
+        <th>
+          <label>Giống: </label>
+          <select name="Giong">
+            <option>Chọn giống</option>
+            @foreach (var i in ViewBag.giong)
+            {
+              <option value="@i.Giong">@i.Giong</option>
+            }
+          </select>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <label class="tc">Hãy chọn triệu chứng</label>
+        </th>
+      </tr>
+
+      @foreach (var tc in ViewBag.ListTC)
+      {
+        <tr class="listtc">
+          <td>
+            <label>@tc.Ten</label>
+            <input type="checkbox" name="TC" value="@tc.ID" />
+            @*@if( == checked){
+              }*@
+          </td>
+        </tr>
+      }
+    <tr>
+      <td class="wrap">
+        <input class="submit" type="submit" value="Chuẩn đoán" />
+      </td>
+      <td class="back">
+        @Html.ActionLink("Trở về", "Index", "Home")
+      </td>
+    </tr>
+    </table>
+    <img class="meoden" src="~/Hinh/meotuvan.png" width="550px" height="350px">
+    <img class="meovang" src="~/Hinh/meo1tuvan.png" width="550px" height="350px">
+
+  </form>
+
+</body>
+</html>

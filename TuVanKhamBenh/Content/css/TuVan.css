@@ -1,0 +1,226 @@
+﻿body {
+  background: pink;
+  background-size: 400% 400%;
+}
+
+.tieude {
+  position: relative;
+  left: 660px;
+  top: 120px;
+}
+
+.table {
+  position: relative;
+  margin: 0px;
+  top: 120px;
+  left: 0px;
+}
+
+  .table tbody tr {
+    position: relative;
+    left: 0px;
+    display: grid;
+  }
+
+    .table tbody tr th {
+      position: relative;
+      right: 0px;
+      font-size: 20px;
+      display: table-cell;
+      padding: 1rem;
+      float: left
+    }
+
+      .table tbody tr th label {
+        position: relative;
+        left: -200px;
+        font-style: italic;
+      }
+
+        .table tbody tr th label.tc {
+          position: relative;
+          right: 350px;
+          align-items: center
+        }
+
+      .table tbody tr th select {
+        font-size: 14px;
+        font-size: 1rem;
+        display: flex;
+        margin: 5px;
+        width: 350px;
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+        text-align-last: center;
+        left: 570px;
+      }
+
+.select:before {
+  position: absolute;
+  content: '\f063';
+  font-family: 'FontAwesome';
+  font-size: 2em;
+  color: #FFF;
+  right: 20px;
+  top: calc(50% - 0.5em);
+}
+
+.select.active::before {
+  transform: rotateX(-180deg);
+}
+
+
+.table tbody tr.listtc {
+  font-size: 18px;
+  display: table-cell;
+  padding: 1rem;
+  float: left;
+  left: 50px;
+}
+/*.table tbody tr td input.submit {*/
+/*position: relative;
+            top: 250px;
+            right: 670px;
+            padding: 8px;
+            font-size: 18px;
+            width: 130px;
+            height: 40px;
+            color: #000;
+            border-radius: 5px;
+            padding: 10px 14px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: lightpink;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgb(255 255 255 / 50%), 7px 7px 20px 0px rgb(0 0 0 / 10%), 4px 4px 5px 0px rgb(0 0 0 / 10%);
+            outline: none*/
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 150px;
+  left: -790px;
+}
+
+input.submit {
+  min-width: 300px;
+  min-height: 60px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: #000;
+  background: #eb759c;
+  border: none;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px rgba(243, 149, 165, 1);
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  padding: 10px;
+}
+
+  input.submit::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #f55f9b;
+    box-shadow: 0 0 60px rgba(247, 145, 171, 1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+  }
+
+  input.submit:hover, .button:focus {
+    color: #fff;
+    transform: translateY(-6px);
+  }
+
+.input.submit:hover::before, button:focus::before {
+  opacity: 1;
+}
+
+input.submit::after {
+  content: '';
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid #f55f9b;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+input.submit:hover::after, input.submit:focus::after {
+  animation: none;
+  display: none;
+}
+
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+.meoden {
+  position: relative;
+  top: -430px;
+  right: -197px;
+}
+
+.meovang {
+  position: relative;
+  top: -430px;
+  right: -370px;
+}
+
+.options {
+  cursor: pointer;
+  width: 300px;
+  min-height: 60px;
+  max-height: 300px;
+  border-radius: 15px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 2px 4px 8px #c5c5c5;
+  transition: all 300ms;
+}
+
+  .options.opened {
+    overflow-y: scroll;
+  }
+
+
+.table tbody tr td.back {
+  position: relative;
+  top: -523px;
+  left: -97px;
+  text-decoration: none;
+}
+
+  .table tbody tr td.back a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+  }

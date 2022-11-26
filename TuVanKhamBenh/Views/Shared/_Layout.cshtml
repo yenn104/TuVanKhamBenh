@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <link rel="shortcut icon " href="~/Hinh/logo.ico">
+        <link rel="stylesheet" href="~/Content/css/Admin.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    </head>
+   
+        <body>
+    
+            <div class="container">
+                <nav>
+                    <ul class="mcd-menu">
+                        <li>
+                           
+                          <a href="/Admin/TrangchuAdmin">
+                            <i class="fa fa-home"></i>
+                            <strong>Trang chủ</strong>
+                            <small>HYK</small>
+                          </a>
+                        </li>
+                        <li>
+                          @*<a>@Html.ActionLink("Về chúng tôi", "About", "Home")</a>*@
+                            <a href="/Home/About" class="active">
+                                <i class="fa fa-edit"></i>
+                                <strong>Về chúng tôi</strong>
+                                <small>HYK</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" /TrieuChung/Index">
+                                <i class="fas fa-user-nurse"></i>
+                                <strong>Quản lý triệu chứng</strong>
+    
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" /Benh/Index">
+                                <i class="fas fa-stethoscope"></i>
+                                <strong>Quản lý bệnh</strong>
+                                   
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/ThongTin/Index">
+                                <i class="fas fa-user-injured"></i>
+                                <strong>Quản lý bệnh nhân</strong>
+    
+                            </a>
+    
+                        </li>
+                        <li>
+                            <a href="/TuVan/ChuanDoan">
+                                <i class="fas fa-user"></i>
+                                <strong>Quản lý chuẩn đoán</strong>
+    
+                            </a>
+                        </li>
+                        <li>
+                            <a href=" /LichKham/Index">
+                                <i class="fas fa-user"></i>
+                                <strong>Quản lý lịch khám</strong>
+    
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/TaiKhoan/Index">
+                                <i class="fas fa-user"></i>
+                                <strong>Quản lý tài khoản</strong>
+    
+                            </a>
+                        </li>
+    
+                       
+                        <li class="float">
+                            <a class="search">
+                                <input type="text" value="">
+                                <button><i class="fa fa-search"></i></button>
+                            </a>
+                            <a href="" class="search-mobile">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+    
+            </div>
+            @RenderBody() 
+    
+        </body>
+</html>
